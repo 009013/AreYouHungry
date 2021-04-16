@@ -24,6 +24,7 @@
     "@umijs/preset-react": "1.x",
     "axios": "^0.21.1",
     "path-to-regexp": "^6.2.0",
+    "redux-persist": "^6.0.0",
     "umi": "^3.4.8"
   },
   "devDependencies": {
