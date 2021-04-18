@@ -19,9 +19,9 @@ export default defineConfig({
   },
 
     // 别名
-  alias: {
-      '@@@': path.resolve(__dirname, '../src/components'),
-  },
+  // alias: {
+  //     '@@@': path.resolve(__dirname, '../src/components'),
+  // },
   dva: {
       immer: true,
       // 启用 dva model 的热更新

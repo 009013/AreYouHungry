@@ -2,7 +2,7 @@ import { Redirect } from 'umi'
 import './rem'
 export default (props) => {
   if (localStorage.getItem("token")) {
-    return <div>{ props.children }</div>;
+    return <>{ props.children }</>;
   } else {
     return <Redirect to="/login" />;
   }

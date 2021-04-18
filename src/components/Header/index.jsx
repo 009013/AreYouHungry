@@ -1,9 +1,11 @@
 import React from 'react'
 import Iconfont from '@/components/Iconfont'
+import './index.less'
 function Header() {
     return (
-        <div>
-            <Iconfont type="icon-37zuo"/>
+        <div className="header">
+            <p><Iconfont type="icon-37zuo"/></p>
+            <p>我的</p>
         </div>
     )
 }
