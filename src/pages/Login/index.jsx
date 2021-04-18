@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '@/components/Header'
+import './index.less'
 function Login() {
     return (
-        <div>
+        <div className="login">
             <Header/>
         </div>
     )
