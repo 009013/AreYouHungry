@@ -1,5 +1,5 @@
 import { Redirect } from 'umi'
-import './rem'
+import './rem.js'
 export default (props) => {
   if (localStorage.getItem("token")) {
     return <>{ props.children }</>;

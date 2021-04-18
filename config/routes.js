@@ -5,6 +5,7 @@ export default [
     },
     {
         path: '/home',
-        component: '@/pages/Home'
+        component: '@/pages/Home',
+        wrappers:['@/untils/auth']
     }
 ]
