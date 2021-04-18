@@ -10,7 +10,7 @@ export default defineConfig({
   //代理
   proxy: {
     '/api': {
-      target: 'https://blogs.zdldove.top',
+      target: 'https://elm.cangdu.org/v2',
       changeOrigin: true,
       pathRewrite: {
         '^/api': ''
