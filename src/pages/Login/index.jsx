@@ -5,7 +5,6 @@ import { connect } from 'dva'
 import './index.less'
 
 export default connect(state => {
-    console.log(state,2);
     return {
         meta: state.login.meta
     }
@@ -15,9 +14,9 @@ function Login(props) {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
     useEffect(() => {
-        // console.log(props,1)
         props.dispatch({
-            type: 'login/meta'
+            type: 'login/meta',
+            payload: {}
         })
     },[])
     const boxFun = e => {
