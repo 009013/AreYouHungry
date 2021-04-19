@@ -19,6 +19,7 @@ export default {
     },
     reducers: {
         setMeta(state, action) {
+            console.log(state);
             return { ...state, meta: action.payload }
         }
     }

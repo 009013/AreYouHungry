@@ -12,6 +12,7 @@ function Login(props) {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
     useEffect(() => {
+        // console.log(props.dispatch,1)
         props.dispatch({
             type: 'login/meta'
         })
