@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '@/components/Header'
+import { connect } from 'dva'
 import './index.less'
+
+export default connect(state =>({
+    
+}))(Login)
+
 function Login() {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
+    useEffect(() => {
+        
+    },[])
     const boxFun = e => {
         if(color === 'span'){
             setColor('on')
@@ -47,4 +56,3 @@ function Login() {
     )
 }
 
-export default Login

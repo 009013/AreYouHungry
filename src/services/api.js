@@ -1,3 +1,4 @@
 export default {
-    loginUrl: `/api/login`
+    loginUrl: `/api/login`,
+    mateUrl: `/api/captchas`
 }

@@ -1,8 +1,8 @@
 import { post } from '@/untils/request'
 import api from './api'
 
-const Login = opt => post(api.loginUrl)
-
+const loginFun = opt => post(api.loginUrl, opt)
+const metaFun = opt => post(mateUrl)
 export default {
-    Login
+    loginFun, metaFun
 }
