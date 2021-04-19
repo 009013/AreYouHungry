@@ -15,6 +15,13 @@ export default defineConfig({
       pathRewrite: {
         '^/api': ''
       }
+    },
+    '/bpi': {
+      target: 'https://elm.cangdu.org/v1',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/bpi': ''
+      }
     }
   },
 
