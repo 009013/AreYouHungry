@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import Header from '@/components/Header'
+import { history } from 'umi'
 import { connect } from 'dva'
 import './index.less'
 
 export default connect(state =>({
-    
+    meta: state.login.meta
 }))(Login)
 
 function Login() {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
     useEffect(() => {
-        
+        // history.dispatch({
+        //     type: 'login/meta'
+        // })
     },[])
     const boxFun = e => {
         if(color === 'span'){

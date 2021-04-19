@@ -19,7 +19,7 @@ export default {
     },
     reducers: {
         setMeta(state, action) {
-            return { ...state, meta: action.payload}
+            return { ...state, meta: action.payload }
         }
     }
 }
