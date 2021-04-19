@@ -4,15 +4,18 @@ import { history } from 'umi'
 import { connect } from 'dva'
 import './index.less'
 
-export default connect(state =>({
-    meta: state.login.meta
-}))(Login)
+export default connect(state => {
+    console.log(state,2);
+    return {
+        meta: state.login.meta
+    }
+})(Login)
 
 function Login(props) {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
     useEffect(() => {
-        // console.log(props.dispatch,1)
+        // console.log(props,1)
         props.dispatch({
             type: 'login/meta'
         })

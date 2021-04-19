@@ -13,6 +13,7 @@ export default {
     },
     effacts:{
         *meta({payload}, {call, put, select}){
+            console.log(1111);
             const data = yield call(() => metaFun(payload))
             console.log(data)
         }
