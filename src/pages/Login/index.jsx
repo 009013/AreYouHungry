@@ -16,7 +16,7 @@ function Login() {
     }
     return (
         <div className="login">
-            <Header/>
+            <Header title="密码登录"/>
             <div className="loginSection">
                 <div>
                     <input type="text"/>
