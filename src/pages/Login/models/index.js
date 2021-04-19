@@ -11,7 +11,7 @@ export default {
     pathToRegexp: {   //初始化数据
 
     },
-    effacts:{
+    effects:{
         *meta({payload}, {call, put, select}){
             console.log(1111);
             const data = yield call(() => metaFun(payload))

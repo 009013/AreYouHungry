@@ -10,19 +10,12 @@ export default defineConfig({
   //代理
   proxy: {
     '/api': {
-      target: 'https://elm.cangdu.org/v2',
+      target: 'https://elm.cangdu.org',
       changeOrigin: true,
       pathRewrite: {
         '^/api': ''
       }
     },
-    '/bpi': {
-      target: 'https://elm.cangdu.org/v1',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/bpi': ''
-      }
-    }
   },
 
     // 别名
