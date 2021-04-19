@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['home'],  // 配置白名单
+  whitelist: ['home','mine'],  // 配置白名单
 }
 // 数据持久化
 const persistEnhancer = () => createStore => (reducer, initialState, enhancer) => {
