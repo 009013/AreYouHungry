@@ -52,19 +52,26 @@ function Login(props) {
 
     //点击登录
     const loginFun = () => {
-        let obj = {
+        let obj1 = {
             username,
             password,
             captcha_code
         }
         props.dispatch({
-            type: 'login/login',
-            payload: obj,
+            type: 'login/loginFn',
+            payload: obj1,
         })
-        console.log(props.obj,1);
+    // alert(sessionStorage.getItem('info'))
     }
     return (
         <div className="login">
+            <div className="disables">
+                <div>
+                    <p></p>
+                    <p>哈哈哈哈</p>
+                </div>
+                <button>确认</button>
+            </div>
             <Header title="密码登录"/>
             <div className="loginSection">
                 <div>

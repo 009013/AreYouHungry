@@ -20,9 +20,11 @@ export default {
                 payload: data.data.code
             })
         },
-        *login({payload}, {call, put, select}){
+        *loginFn({payload}, {call, put, select}){
             const res = yield call(() => loginFun(payload))
-            console.log(res.data,1);
+            if(res.data.status === 0){
+                sessionStorage.setItem("info", res.data.message)
+            }
             yield put({
                 type: 'setLogin',
                 payload: res.data
