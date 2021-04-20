@@ -14,6 +14,7 @@ export default {
     effects:{
         *meta({payload}, {call, put, select}){
             const data = yield call(() => metaFun(payload))
+            //赋值
             yield put({
                 type: 'setMeta',
                 payload: data.data.code
@@ -23,7 +24,6 @@ export default {
     },
     reducers: {
         setMeta(state, action) {
-            // console.log(state);
             return { ...state, meta: action.payload }
         }
     }
