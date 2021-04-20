@@ -13,14 +13,17 @@ export default {
     },
     effects:{
         *meta({payload}, {call, put, select}){
-            console.log(1111);
             const data = yield call(() => metaFun(payload))
-            console.log(data)
+            yield put({
+                type: 'setMeta',
+                payload: data.data.code
+            })
+
         }
     },
     reducers: {
         setMeta(state, action) {
-            console.log(state);
+            // console.log(state);
             return { ...state, meta: action.payload }
         }
     }

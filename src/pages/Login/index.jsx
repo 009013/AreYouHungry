@@ -14,12 +14,12 @@ function Login(props) {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
     useEffect(() => {
-        console.log(1212);
         props.dispatch({
             type: 'login/meta',
             payload: {},
         })
     },[])
+    //点击切换明文暗文
     const boxFun = e => {
         if(color === 'span'){
             setColor('on')
@@ -29,6 +29,13 @@ function Login(props) {
            setColor('span')
            setCloe('box')
         }
+    }
+    //点击换一换验证码
+    const Change = () =>{ 
+        props.dispatch({
+            type: 'login/meta',
+            payload: {},
+        })
     }
     return (
         <div className="login">
@@ -46,8 +53,10 @@ function Login(props) {
                 <div>
                     <p><input type="text" placeholder="验证码"/></p>
                     <p>
-                        <font>12312</font>
-                        <button>看不清换一张</button>
+                        <font>
+                            <img src={props.meta} alt=""/>
+                        </font>
+                        <button onClick={Change}>看不清换一张</button>
                     </p>
                 </div>
             </div>
