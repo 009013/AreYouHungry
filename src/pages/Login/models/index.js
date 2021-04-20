@@ -22,7 +22,11 @@ export default {
         },
         *login({payload}, {call, put, select}){
             const res = yield call(() => loginFun(payload))
-            console.log(res)
+            console.log(res.data,1);
+            yield put({
+                type: 'setLogin',
+                payload: res.data
+            })
          
         },
     },

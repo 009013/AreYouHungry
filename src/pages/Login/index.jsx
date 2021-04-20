@@ -6,7 +6,8 @@ import './index.less'
 
 export default connect(state => {
     return {
-        meta: state.login.meta
+        meta: state.login.meta,
+        obj: state.login.obj
     }
 })(Login)
 
@@ -60,6 +61,7 @@ function Login(props) {
             type: 'login/login',
             payload: obj,
         })
+        console.log(props.obj,1);
     }
     return (
         <div className="login">
