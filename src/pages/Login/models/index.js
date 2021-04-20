@@ -19,12 +19,19 @@ export default {
                 type: 'setMeta',
                 payload: data.data.code
             })
-
-        }
+        },
+        *login({payload}, {call, put, select}){
+            const res = yield call(() => loginFun(payload))
+            console.log(res)
+         
+        },
     },
     reducers: {
         setMeta(state, action) {
             return { ...state, meta: action.payload }
+        },
+        setLogin(state, action) {
+            return { ...state, obj: action.payload }
         }
     }
 }

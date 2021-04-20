@@ -13,6 +13,10 @@ export default connect(state => {
 function Login(props) {
     const [color, setColor] = useState('span')
     const [cole, setCloe] = useState('box')
+    const [switc, setSwitc] = useState('password')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [captcha_code, setCaptcha_code] = useState('')
     useEffect(() => {
         props.dispatch({
             type: 'login/meta',
@@ -24,10 +28,11 @@ function Login(props) {
         if(color === 'span'){
             setColor('on')
             setCloe('on1')
-
+            setSwitc('text')
         } else {
            setColor('span')
            setCloe('box')
+           setSwitc('password')
         }
     }
     //点击换一换验证码
@@ -37,21 +42,40 @@ function Login(props) {
             payload: {},
         })
     }
+    //姓名
+    const nameFun = e => setUsername(e.target.value)
+    //密码
+    const passFun = e => setPassword(e.target.value)
+    //验证妈
+    const captcha = e => setCaptcha_code(e.target.value)
+
+    //点击登录
+    const loginFun = () => {
+        let obj = {
+            username,
+            password,
+            captcha_code
+        }
+        props.dispatch({
+            type: 'login/login',
+            payload: obj,
+        })
+    }
     return (
         <div className="login">
             <Header title="密码登录"/>
             <div className="loginSection">
                 <div>
-                    <input type="text"/>
+                    <input type="text" onChange={nameFun} />
                 </div>
                 <div>
-                    <input type="text"/>
+                    <input type={switc} onChange={passFun}/>
                     <p className={cole} onClick={boxFun}>
                         <span className={color}></span>
                     </p>
                 </div>
                 <div>
-                    <p><input type="text" placeholder="验证码"/></p>
+                    <p><input type="text" placeholder="验证码" onChange={captcha} /></p>
                     <p>
                         <font>
                             <img src={props.meta} alt=""/>
@@ -65,7 +89,7 @@ function Login(props) {
                 <p>注册过的用户可凭账号密码登录</p>
             </div>
             <p>
-                <button>登录</button>
+                <button onClick={loginFun}>登录</button>
             </p>
             <p>重置密码?</p>
         </div>
