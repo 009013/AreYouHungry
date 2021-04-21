@@ -62,14 +62,13 @@ function Login(props) {
             type: 'login/loginFn',
             payload: obj1,
         })
-    // alert(sessionStorage.getItem('info'))
     }
     return (
         <div className="login">
             <div className="disables">
                 <div>
                     <p><Iconfont type="icon-jinggao"/></p>
-                    <p>哈哈哈哈</p>
+                    <p>11{sessionStorage.getItem('info')}</p>
                 </div>
                 <button>确认</button>
             </div>
