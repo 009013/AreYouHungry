@@ -96,7 +96,7 @@ function Login(props) {
                     </p>
                 </div>
                 <div>
-                    <p><input type="text" placeholder="验证码" onChange={captcha} /></p>
+                    <p><input type="text" placeholder="验证码" onChange={captcha} value={captcha_code}/></p>
                     <p>
                         <font>
                             <img src={props.meta} alt=""/>
