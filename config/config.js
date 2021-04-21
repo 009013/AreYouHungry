@@ -1,8 +1,6 @@
-
-import { defineConfig } from 'umi'
-import routes from './routes'
+import { defineConfig } from 'umi';
+import routes from './routes';
 export default defineConfig({
-
   nodeModulesTransform: {
     type: 'none',
   },
@@ -10,27 +8,23 @@ export default defineConfig({
   //代理
   proxy: {
     '/api': {
-      target: 'https://blogs.zdldove.top',
+      target: 'https://elm.cangdu.org',
       changeOrigin: true,
       pathRewrite: {
-        '^/api': ''
-      }
-    }
+        '^/api': '',
+      },
+    },
   },
 
-    // 别名
+  // 别名
   // alias: {
   //     '@@@': path.resolve(__dirname, '../src/components'),
   // },
   dva: {
-      immer: true,
-      // 启用 dva model 的热更新
-      hmr: false,
+    immer: true,
+    // 启用 dva model 的热更新
+    hmr: false,
   },
-  
+
   fastRefresh: {},
-
-})
-
-
-
+});

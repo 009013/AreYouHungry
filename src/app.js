@@ -1,20 +1,28 @@
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['home','mine'],  // 配置白名单
-}
+  whitelist: ['home', 'login', 'mine'], // 配置白名单
+};
 // 数据持久化
-const persistEnhancer = () => createStore => (reducer, initialState, enhancer) => {
-  const store = createStore(persistReducer(persistConfig, reducer), initialState, enhancer);
+const persistEnhancer = () => (createStore) => (
+  reducer,
+  initialState,
+  enhancer,
+) => {
+  const store = createStore(
+    persistReducer(persistConfig, reducer),
+    initialState,
+    enhancer,
+  );
   const persist = persistStore(store);
-  return {...store, persist };
-}
+  return { ...store, persist };
+};
 
 export const dva = {
   config: {
-    extraEnhancers: [persistEnhancer()]
-  }
-}
+    extraEnhancers: [persistEnhancer()],
+  },
+};
