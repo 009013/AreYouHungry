@@ -98,7 +98,7 @@ function Login(props) {
                 <p>温馨提示：未注册过的账号，登录时将会自动注册</p>
                 <p>注册过的用户可凭账号密码登录</p>
             </div>
-            <p>
+            <p className="btn">
                 <button onClick={loginFun}>登录</button>
             </p>
             <p>重置密码?</p>
