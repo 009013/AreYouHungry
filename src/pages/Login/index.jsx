@@ -72,7 +72,6 @@ function Login(props) {
     //点击关闭遮罩层
     const okokFun = () => {
         setDisable('none')
-        setCaptcha_code('')
         mete()
     }
     return (
@@ -96,7 +95,7 @@ function Login(props) {
                     </p>
                 </div>
                 <div>
-                    <p><input type="text" placeholder="验证码" onChange={captcha} value={captcha_code}/></p>
+                    <p><input type="text" placeholder="验证码" onChange={captcha} /></p>
                     <p>
                         <font>
                             <img src={props.meta} alt=""/>
