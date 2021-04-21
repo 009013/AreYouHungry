@@ -72,6 +72,7 @@ function Login(props) {
     //点击关闭遮罩层
     const okokFun = () => {
         setDisable('none')
+        setCaptcha_code('')
         mete()
     }
     return (
