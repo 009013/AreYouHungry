@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '@/components/Header'
+import Iconfont from '@/components/Iconfont'
 import { history } from 'umi'
 import { connect } from 'dva'
 import './index.less'
@@ -67,7 +68,7 @@ function Login(props) {
         <div className="login">
             <div className="disables">
                 <div>
-                    <p></p>
+                    <p><Iconfont type="icon-jinggao"/></p>
                     <p>哈哈哈哈</p>
                 </div>
                 <button>确认</button>
