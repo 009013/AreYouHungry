@@ -19,6 +19,7 @@ function Login(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [captcha_code, setCaptcha_code] = useState('')
+    const [disable, setDisable] = useState('none')
     useEffect(() => {
         props.dispatch({
             type: 'login/meta',
@@ -65,7 +66,7 @@ function Login(props) {
     }
     return (
         <div className="login">
-            <div className="disables">
+            <div className="disables" style={{display: disable}}>
                 <div>
                     <p><Iconfont type="icon-jinggao"/></p>
                     <p>11{sessionStorage.getItem('info')}</p>
@@ -93,7 +94,7 @@ function Login(props) {
                     </p>
                 </div>
             </div>
-            <div>
+            <div style={{color:'red'}}>
                 <p>温馨提示：未注册过的账号，登录时将会自动注册</p>
                 <p>注册过的用户可凭账号密码登录</p>
             </div>
