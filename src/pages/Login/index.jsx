@@ -20,11 +20,16 @@ function Login(props) {
     const [password, setPassword] = useState('')
     const [captcha_code, setCaptcha_code] = useState('')
     const [disable, setDisable] = useState('none')
-    useEffect(() => {
+
+    //验证码的封装
+    const mete = () => {
         props.dispatch({
             type: 'login/meta',
             payload: {},
         })
+    }
+    useEffect(() => {
+        mete()
     },[])
     //点击切换明文暗文
     const boxFun = e => {
@@ -40,10 +45,7 @@ function Login(props) {
     }
     //点击换一换验证码
     const Change = () =>{ 
-        props.dispatch({
-            type: 'login/meta',
-            payload: {},
-        })
+        mete()
     }
     //姓名
     const nameFun = e => setUsername(e.target.value)
@@ -53,25 +55,33 @@ function Login(props) {
     const captcha = e => setCaptcha_code(e.target.value)
 
     //点击登录
-    const loginFun = () => {
+    const loginFun = async () => {
         let obj1 = {
             username,
             password,
             captcha_code
         }
-        props.dispatch({
+       let res = await props.dispatch({
             type: 'login/loginFn',
             payload: obj1,
         })
+        if(res.payload.status === 0){
+            setDisable('flex')
+        }
+    }
+    //点击关闭遮罩层
+    const okokFun = () => {
+        setDisable('none')
+        mete()
     }
     return (
         <div className="login">
             <div className="disables" style={{display: disable}}>
                 <div>
                     <p><Iconfont type="icon-jinggao"/></p>
-                    <p>11{sessionStorage.getItem('info')}</p>
+                    <p>{sessionStorage.getItem('info')}</p>
                 </div>
-                <button>确认</button>
+                <button onClick={okokFun}>确认</button>
             </div>
             <Header title="密码登录"/>
             <div className="loginSection">

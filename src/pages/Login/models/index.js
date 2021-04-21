@@ -25,7 +25,7 @@ export default {
             if(res.data.status === 0){
                 sessionStorage.setItem("info", res.data.message)
             }
-            yield put({
+            return yield put({
                 type: 'setLogin',
                 payload: res.data
             })
