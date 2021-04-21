@@ -68,6 +68,7 @@ function Login(props) {
         if(res.payload.status === 0){
             setDisable('flex')
         }
+        props.history.goBack()
     }
     //点击关闭遮罩层
     const okokFun = () => {
